@@ -19,11 +19,7 @@ string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra")
 string(APPEND CMAKE_CXX_FLAGS_DEBUG " -fsanitize=address,undefined -fno-omit-frame-pointer")
 string(APPEND CMAKE_EXE_LINKER_FLAGS_DEBUG " -fsanitize=address,undefined -fno-omit-frame-pointer")
 
-find_package(SFML COMPONENTS graphics REQUIRED)
-
 add_executable(galton src/main.cpp src/board.cpp src/iopegs.cpp)
-
-target_link_libraries(galton PRIVATE sfml-graphics)
 
 # se il testing e' abilitato...
 # per disabilitare il testing, passare -DBUILD_TESTING=OFF a cmake durante la fase di configurazione
