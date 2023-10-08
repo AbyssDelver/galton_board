@@ -53,7 +53,7 @@ The '.' rapresents the absence of a peg: if the balls falls on the '.' it will d
 3. the number of rows must be even
 
 ## How to read the result
-the result gest printed in two different ways: first a visual rapresentation of the lower part of the Galton board is drawen on the screen. The number of elements in each column is
+the result gest printed in two different ways: first a visual rapresentation of the lower part of the Galton board is drawn on the screen. The number of elements in each column is
 relative to the column with the maximum number of entries, which is always drawn full. Then a full breakdown of the numbers in each bin gets drawn on the screen
 
 ## Epistemic status
