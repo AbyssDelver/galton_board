@@ -1,3 +1,0 @@
-galton.t 0 0
----
-galton.t
