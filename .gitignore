@@ -1,2 +1,2 @@
-build
-.vcode
+build/
+.vscode/

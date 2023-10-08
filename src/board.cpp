@@ -148,8 +148,8 @@ void Board::ball() { pass(0, (width + 1) / 2 - 1); }
 // todo: remove last |
 void Board::print_occurences() {
   auto max = *(std::max_element(m_pegs[height].begin(), m_pegs[height].end()));
-  for (int i{}; i < occurence_print_size; ++i) {
-    for (int j{}; j < m_pegs[height].size(); ++j) {
+  for (size_t i{}; i < occurence_print_size; ++i) {
+    for (size_t j{}; j < m_pegs[height].size(); ++j) {
       auto entry = m_pegs[height][j];
 
       if (static_cast<double>(entry) / max * occurence_print_size >=

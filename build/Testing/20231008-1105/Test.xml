@@ -6,7 +6,7 @@
 	CompilerName="/usr/bin/clang++"
 	CompilerVersion="14.0.3.14030022"
 	OSName="macOS"
-	Hostname="Host-033.homenet.telecomitalia.it"
+	Hostname="Liams-Air.homenet.telecomitalia.it"
 	OSRelease="13.3.1"
 	OSVersion="22E261"
 	OSPlatform="arm64"
@@ -18,17 +18,17 @@
 	ProcessorCacheSize="131072"
 	NumberOfLogicalCPU="8"
 	NumberOfPhysicalCPU="8"
-	TotalVirtualMemory="2048"
+	TotalVirtualMemory="0"
 	TotalPhysicalMemory="8192"
 	LogicalProcessorsPerPhysical="8"
 	ProcessorClockFrequency="0"
 	>
 	<Testing>
-		<StartDateTime>Oct 08 19:46 CEST</StartDateTime>
-		<StartTestTime>1696787165</StartTestTime>
+		<StartDateTime>Oct 08 21:11 CEST</StartDateTime>
+		<StartTestTime>1696792313</StartTestTime>
 		<TestList/>
-		<EndDateTime>Oct 08 19:46 CEST</EndDateTime>
-		<EndTestTime>1696787165</EndTestTime>
+		<EndDateTime>Oct 08 21:11 CEST</EndDateTime>
+		<EndTestTime>1696792313</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
