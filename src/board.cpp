@@ -3,12 +3,13 @@
 #include <cassert>
 #include <iostream>
 #include <random>
+#include <iomanip>
 
 #include "iopegs.hpp"
 
 #define DEBUG_BOARD false
 
-constexpr int occurence_print_size{10};
+constexpr int entries_print_size{8};
 
 std::random_device rd;   // a seed source for the random number engine
 std::mt19937 gen(rd());  // mersenne_twister_engine seeded with rd()
@@ -48,9 +49,9 @@ Board::Board(matrix pegs) : m_pegs{pegs}, height{pegs.size()} {
     }
   }
 
-  std::vector<int> occurences(width);
+  std::vector<int> entries_(width);
   // todo: check by deafult it's zero vector
-  m_pegs.push_back(occurences);
+  m_pegs.push_back(entries_);
 }
 
 void Board::drop(size_t row, size_t column) {
@@ -93,7 +94,7 @@ void Board::pass(size_t row, size_t column) {
 
   // handle if we are at last column
   if (row == height) {
-    // add one to occurences
+    // add one to entries_
     ++m_pegs[row][column];
     return;
   }
@@ -146,14 +147,14 @@ void Board::pass(size_t row, size_t column) {
 void Board::ball() { pass(0, (width + 1) / 2 - 1); }
 
 // todo: remove last |
-void Board::print_occurences() {
+void Board::print_entries_graphic() {
   auto max = *(std::max_element(m_pegs[height].begin(), m_pegs[height].end()));
-  for (size_t i{}; i < occurence_print_size; ++i) {
+  for (size_t i{}; i < entries_print_size; ++i) {
     for (size_t j{}; j < m_pegs[height].size(); ++j) {
       auto entry = m_pegs[height][j];
 
-      if (static_cast<double>(entry) / max * occurence_print_size >=
-          static_cast<double>(occurence_print_size - i)) {
+      if (static_cast<double>(entry) / max * entries_print_size >=
+          static_cast<double>(entries_print_size - i)) {
         std::cout << 'x';
 
       } else {
@@ -166,5 +167,15 @@ void Board::print_occurences() {
     }
     std::cout << '\n';
   }
+}
+
+void Board::print_entries_numeric(){
+  for (auto entry : m_pegs[height]){
+    std::cout << "--- " << std::setw(8) << entry << " ---\n";
+  }
+}
+
+void Board::clear_entries(){
+  std::replace_if(m_pegs[height].begin(), m_pegs[height].end(), [](int){return true;}, 0);
 }
 }  // namespace galton

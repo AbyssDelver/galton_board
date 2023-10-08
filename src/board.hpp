@@ -17,7 +17,9 @@ class Board {
  public:
   Board(matrix);
   void ball();
-  void print_occurences();
+  void print_entries_graphic();
+  void print_entries_numeric();
+  void clear_entries();
 };
 
 }  // namespace galton
