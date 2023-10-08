@@ -21,7 +21,7 @@ string(APPEND CMAKE_EXE_LINKER_FLAGS_DEBUG " -fsanitize=address,undefined -fno-o
 
 find_package(SFML COMPONENTS graphics REQUIRED)
 
-add_executable(galton main.cpp board.cpp iopegs.cpp)
+add_executable(galton src/main.cpp src/board.cpp src/iopegs.cpp)
 
 target_link_libraries(galton PRIVATE sfml-graphics)
 
@@ -30,7 +30,7 @@ target_link_libraries(galton PRIVATE sfml-graphics)
 
 if (BUILD_TESTING)
   # aggiungi l'eseguibile boid.t
-  add_executable(galton.t board.cpp board_test.cpp iopegs.cpp)
+  add_executable(galton.t src/board.cpp src/board_test.cpp src/iopegs.cpp)
 
   # aggiungi l'eseguibile boid.t alla lista dei test
   add_test(NAME galton.t COMMAND galton.t)

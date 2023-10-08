@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/liamcavini/programming/galton_board/board.cpp" "CMakeFiles/galton.t.dir/board.cpp.o" "gcc" "CMakeFiles/galton.t.dir/board.cpp.o.d"
-  "/Users/liamcavini/programming/galton_board/board_test.cpp" "CMakeFiles/galton.t.dir/board_test.cpp.o" "gcc" "CMakeFiles/galton.t.dir/board_test.cpp.o.d"
-  "/Users/liamcavini/programming/galton_board/iopegs.cpp" "CMakeFiles/galton.t.dir/iopegs.cpp.o" "gcc" "CMakeFiles/galton.t.dir/iopegs.cpp.o.d"
+  "/Users/liamcavini/programming/galton_board/src/board.cpp" "CMakeFiles/galton.t.dir/src/board.cpp.o" "gcc" "CMakeFiles/galton.t.dir/src/board.cpp.o.d"
+  "/Users/liamcavini/programming/galton_board/src/board_test.cpp" "CMakeFiles/galton.t.dir/src/board_test.cpp.o" "gcc" "CMakeFiles/galton.t.dir/src/board_test.cpp.o.d"
+  "/Users/liamcavini/programming/galton_board/src/iopegs.cpp" "CMakeFiles/galton.t.dir/src/iopegs.cpp.o" "gcc" "CMakeFiles/galton.t.dir/src/iopegs.cpp.o.d"
   )
 
 # Targets to which this target links.

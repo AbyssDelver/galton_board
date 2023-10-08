@@ -69,60 +69,60 @@ include CMakeFiles/galton.t.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/galton.t.dir/flags.make
 
-CMakeFiles/galton.t.dir/board.cpp.o: CMakeFiles/galton.t.dir/flags.make
-CMakeFiles/galton.t.dir/board.cpp.o: ../board.cpp
-CMakeFiles/galton.t.dir/board.cpp.o: CMakeFiles/galton.t.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liamcavini/programming/galton_board/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/galton.t.dir/board.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/galton.t.dir/board.cpp.o -MF CMakeFiles/galton.t.dir/board.cpp.o.d -o CMakeFiles/galton.t.dir/board.cpp.o -c /Users/liamcavini/programming/galton_board/board.cpp
+CMakeFiles/galton.t.dir/src/board.cpp.o: CMakeFiles/galton.t.dir/flags.make
+CMakeFiles/galton.t.dir/src/board.cpp.o: ../src/board.cpp
+CMakeFiles/galton.t.dir/src/board.cpp.o: CMakeFiles/galton.t.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liamcavini/programming/galton_board/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/galton.t.dir/src/board.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/galton.t.dir/src/board.cpp.o -MF CMakeFiles/galton.t.dir/src/board.cpp.o.d -o CMakeFiles/galton.t.dir/src/board.cpp.o -c /Users/liamcavini/programming/galton_board/src/board.cpp
 
-CMakeFiles/galton.t.dir/board.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galton.t.dir/board.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liamcavini/programming/galton_board/board.cpp > CMakeFiles/galton.t.dir/board.cpp.i
+CMakeFiles/galton.t.dir/src/board.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galton.t.dir/src/board.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liamcavini/programming/galton_board/src/board.cpp > CMakeFiles/galton.t.dir/src/board.cpp.i
 
-CMakeFiles/galton.t.dir/board.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galton.t.dir/board.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liamcavini/programming/galton_board/board.cpp -o CMakeFiles/galton.t.dir/board.cpp.s
+CMakeFiles/galton.t.dir/src/board.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galton.t.dir/src/board.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liamcavini/programming/galton_board/src/board.cpp -o CMakeFiles/galton.t.dir/src/board.cpp.s
 
-CMakeFiles/galton.t.dir/board_test.cpp.o: CMakeFiles/galton.t.dir/flags.make
-CMakeFiles/galton.t.dir/board_test.cpp.o: ../board_test.cpp
-CMakeFiles/galton.t.dir/board_test.cpp.o: CMakeFiles/galton.t.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liamcavini/programming/galton_board/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/galton.t.dir/board_test.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/galton.t.dir/board_test.cpp.o -MF CMakeFiles/galton.t.dir/board_test.cpp.o.d -o CMakeFiles/galton.t.dir/board_test.cpp.o -c /Users/liamcavini/programming/galton_board/board_test.cpp
+CMakeFiles/galton.t.dir/src/board_test.cpp.o: CMakeFiles/galton.t.dir/flags.make
+CMakeFiles/galton.t.dir/src/board_test.cpp.o: ../src/board_test.cpp
+CMakeFiles/galton.t.dir/src/board_test.cpp.o: CMakeFiles/galton.t.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liamcavini/programming/galton_board/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/galton.t.dir/src/board_test.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/galton.t.dir/src/board_test.cpp.o -MF CMakeFiles/galton.t.dir/src/board_test.cpp.o.d -o CMakeFiles/galton.t.dir/src/board_test.cpp.o -c /Users/liamcavini/programming/galton_board/src/board_test.cpp
 
-CMakeFiles/galton.t.dir/board_test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galton.t.dir/board_test.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liamcavini/programming/galton_board/board_test.cpp > CMakeFiles/galton.t.dir/board_test.cpp.i
+CMakeFiles/galton.t.dir/src/board_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galton.t.dir/src/board_test.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liamcavini/programming/galton_board/src/board_test.cpp > CMakeFiles/galton.t.dir/src/board_test.cpp.i
 
-CMakeFiles/galton.t.dir/board_test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galton.t.dir/board_test.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liamcavini/programming/galton_board/board_test.cpp -o CMakeFiles/galton.t.dir/board_test.cpp.s
+CMakeFiles/galton.t.dir/src/board_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galton.t.dir/src/board_test.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liamcavini/programming/galton_board/src/board_test.cpp -o CMakeFiles/galton.t.dir/src/board_test.cpp.s
 
-CMakeFiles/galton.t.dir/iopegs.cpp.o: CMakeFiles/galton.t.dir/flags.make
-CMakeFiles/galton.t.dir/iopegs.cpp.o: ../iopegs.cpp
-CMakeFiles/galton.t.dir/iopegs.cpp.o: CMakeFiles/galton.t.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liamcavini/programming/galton_board/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/galton.t.dir/iopegs.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/galton.t.dir/iopegs.cpp.o -MF CMakeFiles/galton.t.dir/iopegs.cpp.o.d -o CMakeFiles/galton.t.dir/iopegs.cpp.o -c /Users/liamcavini/programming/galton_board/iopegs.cpp
+CMakeFiles/galton.t.dir/src/iopegs.cpp.o: CMakeFiles/galton.t.dir/flags.make
+CMakeFiles/galton.t.dir/src/iopegs.cpp.o: ../src/iopegs.cpp
+CMakeFiles/galton.t.dir/src/iopegs.cpp.o: CMakeFiles/galton.t.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liamcavini/programming/galton_board/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/galton.t.dir/src/iopegs.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/galton.t.dir/src/iopegs.cpp.o -MF CMakeFiles/galton.t.dir/src/iopegs.cpp.o.d -o CMakeFiles/galton.t.dir/src/iopegs.cpp.o -c /Users/liamcavini/programming/galton_board/src/iopegs.cpp
 
-CMakeFiles/galton.t.dir/iopegs.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galton.t.dir/iopegs.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liamcavini/programming/galton_board/iopegs.cpp > CMakeFiles/galton.t.dir/iopegs.cpp.i
+CMakeFiles/galton.t.dir/src/iopegs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galton.t.dir/src/iopegs.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liamcavini/programming/galton_board/src/iopegs.cpp > CMakeFiles/galton.t.dir/src/iopegs.cpp.i
 
-CMakeFiles/galton.t.dir/iopegs.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galton.t.dir/iopegs.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liamcavini/programming/galton_board/iopegs.cpp -o CMakeFiles/galton.t.dir/iopegs.cpp.s
+CMakeFiles/galton.t.dir/src/iopegs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galton.t.dir/src/iopegs.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liamcavini/programming/galton_board/src/iopegs.cpp -o CMakeFiles/galton.t.dir/src/iopegs.cpp.s
 
 # Object files for target galton.t
 galton_t_OBJECTS = \
-"CMakeFiles/galton.t.dir/board.cpp.o" \
-"CMakeFiles/galton.t.dir/board_test.cpp.o" \
-"CMakeFiles/galton.t.dir/iopegs.cpp.o"
+"CMakeFiles/galton.t.dir/src/board.cpp.o" \
+"CMakeFiles/galton.t.dir/src/board_test.cpp.o" \
+"CMakeFiles/galton.t.dir/src/iopegs.cpp.o"
 
 # External object files for target galton.t
 galton_t_EXTERNAL_OBJECTS =
 
-galton.t: CMakeFiles/galton.t.dir/board.cpp.o
-galton.t: CMakeFiles/galton.t.dir/board_test.cpp.o
-galton.t: CMakeFiles/galton.t.dir/iopegs.cpp.o
+galton.t: CMakeFiles/galton.t.dir/src/board.cpp.o
+galton.t: CMakeFiles/galton.t.dir/src/board_test.cpp.o
+galton.t: CMakeFiles/galton.t.dir/src/iopegs.cpp.o
 galton.t: CMakeFiles/galton.t.dir/build.make
 galton.t: CMakeFiles/galton.t.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/liamcavini/programming/galton_board/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable galton.t"

@@ -1,32 +1,32 @@
 [
 {
   "directory": "/Users/liamcavini/programming/galton_board/build",
-  "command": "/usr/bin/clang++  -isystem /opt/homebrew/include  -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.dir/main.cpp.o -c /Users/liamcavini/programming/galton_board/main.cpp",
-  "file": "/Users/liamcavini/programming/galton_board/main.cpp"
+  "command": "/usr/bin/clang++  -isystem /opt/homebrew/include  -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.dir/src/main.cpp.o -c /Users/liamcavini/programming/galton_board/src/main.cpp",
+  "file": "/Users/liamcavini/programming/galton_board/src/main.cpp"
 },
 {
   "directory": "/Users/liamcavini/programming/galton_board/build",
-  "command": "/usr/bin/clang++  -isystem /opt/homebrew/include  -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.dir/board.cpp.o -c /Users/liamcavini/programming/galton_board/board.cpp",
-  "file": "/Users/liamcavini/programming/galton_board/board.cpp"
+  "command": "/usr/bin/clang++  -isystem /opt/homebrew/include  -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.dir/src/board.cpp.o -c /Users/liamcavini/programming/galton_board/src/board.cpp",
+  "file": "/Users/liamcavini/programming/galton_board/src/board.cpp"
 },
 {
   "directory": "/Users/liamcavini/programming/galton_board/build",
-  "command": "/usr/bin/clang++  -isystem /opt/homebrew/include  -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.dir/iopegs.cpp.o -c /Users/liamcavini/programming/galton_board/iopegs.cpp",
-  "file": "/Users/liamcavini/programming/galton_board/iopegs.cpp"
+  "command": "/usr/bin/clang++  -isystem /opt/homebrew/include  -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.dir/src/iopegs.cpp.o -c /Users/liamcavini/programming/galton_board/src/iopegs.cpp",
+  "file": "/Users/liamcavini/programming/galton_board/src/iopegs.cpp"
 },
 {
   "directory": "/Users/liamcavini/programming/galton_board/build",
-  "command": "/usr/bin/clang++    -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.t.dir/board.cpp.o -c /Users/liamcavini/programming/galton_board/board.cpp",
-  "file": "/Users/liamcavini/programming/galton_board/board.cpp"
+  "command": "/usr/bin/clang++    -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.t.dir/src/board.cpp.o -c /Users/liamcavini/programming/galton_board/src/board.cpp",
+  "file": "/Users/liamcavini/programming/galton_board/src/board.cpp"
 },
 {
   "directory": "/Users/liamcavini/programming/galton_board/build",
-  "command": "/usr/bin/clang++    -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.t.dir/board_test.cpp.o -c /Users/liamcavini/programming/galton_board/board_test.cpp",
-  "file": "/Users/liamcavini/programming/galton_board/board_test.cpp"
+  "command": "/usr/bin/clang++    -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.t.dir/src/board_test.cpp.o -c /Users/liamcavini/programming/galton_board/src/board_test.cpp",
+  "file": "/Users/liamcavini/programming/galton_board/src/board_test.cpp"
 },
 {
   "directory": "/Users/liamcavini/programming/galton_board/build",
-  "command": "/usr/bin/clang++    -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.t.dir/iopegs.cpp.o -c /Users/liamcavini/programming/galton_board/iopegs.cpp",
-  "file": "/Users/liamcavini/programming/galton_board/iopegs.cpp"
+  "command": "/usr/bin/clang++    -Wall -Wextra -g -fsanitize=address,undefined -fno-omit-frame-pointer -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu++17 -o CMakeFiles/galton.t.dir/src/iopegs.cpp.o -c /Users/liamcavini/programming/galton_board/src/iopegs.cpp",
+  "file": "/Users/liamcavini/programming/galton_board/src/iopegs.cpp"
 }
 ]

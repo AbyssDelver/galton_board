@@ -516,107 +516,107 @@ galton.t/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/build
 .PHONY : galton.t/fast
 
-board.o: board.cpp.o
-.PHONY : board.o
+src/board.o: src/board.cpp.o
+.PHONY : src/board.o
 
 # target to build an object file
-board.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/board.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/board.cpp.o
-.PHONY : board.cpp.o
+src/board.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/board.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/src/board.cpp.o
+.PHONY : src/board.cpp.o
 
-board.i: board.cpp.i
-.PHONY : board.i
+src/board.i: src/board.cpp.i
+.PHONY : src/board.i
 
 # target to preprocess a source file
-board.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/board.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/board.cpp.i
-.PHONY : board.cpp.i
+src/board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/board.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/src/board.cpp.i
+.PHONY : src/board.cpp.i
 
-board.s: board.cpp.s
-.PHONY : board.s
+src/board.s: src/board.cpp.s
+.PHONY : src/board.s
 
 # target to generate assembly for a file
-board.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/board.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/board.cpp.s
-.PHONY : board.cpp.s
+src/board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/board.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/src/board.cpp.s
+.PHONY : src/board.cpp.s
 
-board_test.o: board_test.cpp.o
-.PHONY : board_test.o
+src/board_test.o: src/board_test.cpp.o
+.PHONY : src/board_test.o
 
 # target to build an object file
-board_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/board_test.cpp.o
-.PHONY : board_test.cpp.o
+src/board_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/src/board_test.cpp.o
+.PHONY : src/board_test.cpp.o
 
-board_test.i: board_test.cpp.i
-.PHONY : board_test.i
+src/board_test.i: src/board_test.cpp.i
+.PHONY : src/board_test.i
 
 # target to preprocess a source file
-board_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/board_test.cpp.i
-.PHONY : board_test.cpp.i
+src/board_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/src/board_test.cpp.i
+.PHONY : src/board_test.cpp.i
 
-board_test.s: board_test.cpp.s
-.PHONY : board_test.s
+src/board_test.s: src/board_test.cpp.s
+.PHONY : src/board_test.s
 
 # target to generate assembly for a file
-board_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/board_test.cpp.s
-.PHONY : board_test.cpp.s
+src/board_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/src/board_test.cpp.s
+.PHONY : src/board_test.cpp.s
 
-iopegs.o: iopegs.cpp.o
-.PHONY : iopegs.o
+src/iopegs.o: src/iopegs.cpp.o
+.PHONY : src/iopegs.o
 
 # target to build an object file
-iopegs.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/iopegs.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/iopegs.cpp.o
-.PHONY : iopegs.cpp.o
+src/iopegs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/iopegs.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/src/iopegs.cpp.o
+.PHONY : src/iopegs.cpp.o
 
-iopegs.i: iopegs.cpp.i
-.PHONY : iopegs.i
+src/iopegs.i: src/iopegs.cpp.i
+.PHONY : src/iopegs.i
 
 # target to preprocess a source file
-iopegs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/iopegs.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/iopegs.cpp.i
-.PHONY : iopegs.cpp.i
+src/iopegs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/iopegs.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/src/iopegs.cpp.i
+.PHONY : src/iopegs.cpp.i
 
-iopegs.s: iopegs.cpp.s
-.PHONY : iopegs.s
+src/iopegs.s: src/iopegs.cpp.s
+.PHONY : src/iopegs.s
 
 # target to generate assembly for a file
-iopegs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/iopegs.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/iopegs.cpp.s
-.PHONY : iopegs.cpp.s
+src/iopegs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/iopegs.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.t.dir/build.make CMakeFiles/galton.t.dir/src/iopegs.cpp.s
+.PHONY : src/iopegs.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -657,18 +657,18 @@ help:
 	@echo "... NightlyUpdate"
 	@echo "... galton"
 	@echo "... galton.t"
-	@echo "... board.o"
-	@echo "... board.i"
-	@echo "... board.s"
-	@echo "... board_test.o"
-	@echo "... board_test.i"
-	@echo "... board_test.s"
-	@echo "... iopegs.o"
-	@echo "... iopegs.i"
-	@echo "... iopegs.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/board.o"
+	@echo "... src/board.i"
+	@echo "... src/board.s"
+	@echo "... src/board_test.o"
+	@echo "... src/board_test.i"
+	@echo "... src/board_test.s"
+	@echo "... src/iopegs.o"
+	@echo "... src/iopegs.i"
+	@echo "... src/iopegs.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
