@@ -1,9 +1,9 @@
 #include "board.hpp"
 
 #include <cassert>
+#include <iomanip>
 #include <iostream>
 #include <random>
-#include <iomanip>
 
 #include "iopegs.hpp"
 
@@ -13,11 +13,14 @@ constexpr int entries_print_size{8};
 
 std::random_device rd;   // a seed source for the random number engine
 std::mt19937 gen(rd());  // mersenne_twister_engine seeded with rd()
-std::uniform_int_distribution<> distrib(0, 1);
+// todo: check is actually double
+std::uniform_real_distribution<> distrib(0., 1.);
 
 namespace galton {
 // todo: add assert that all the vectors be comprised of ones and zeros
-Board::Board(matrix pegs) : m_pegs{pegs}, height{pegs.size()} {
+// todo: check that is deep copy
+Board::Board(matrix pegs, const std::vector<double>& left_prob)
+    : m_pegs{pegs}, m_left_prob{left_prob}, height{pegs.size()} {
   if (height % 2 != 0) {
     throw std::invalid_argument("height must be an even number");
   };
@@ -29,6 +32,12 @@ Board::Board(matrix pegs) : m_pegs{pegs}, height{pegs.size()} {
   if ((pegs[0].size()) % 2 == 0) {
     throw std::invalid_argument(
         "first row must have an uneven number of elements");
+  };
+  if (left_prob.size() != height + 1) {
+    throw std::invalid_argument(
+        "vector of row probability should contain as many elements as rows in "
+        "the board, plus another one for the probability of section dividers in case of ball "
+        "drop on last row");
   };
 
   width = pegs[0].size();
@@ -43,7 +52,7 @@ Board::Board(matrix pegs) : m_pegs{pegs}, height{pegs.size()} {
     } else {
       if ((pegs[i].size() != width - 1)) {
         throw std::invalid_argument(
-            "rows must alternate between sizes of width and sizes of width - "
+            "rows must alternate between sizes of the width and sizes of the width - "
             "1");
       };
     }
@@ -65,12 +74,12 @@ void Board::drop(size_t row, size_t column) {
     // sumulating hitting border of section divider:
     auto direction = distrib(gen);
 
-    if (direction == 1) {
+    if (direction >= m_left_prob[height]) {
       ++m_pegs[height][column + 1];
       return;
     }
 
-    if (direction == 0) {
+    if (direction < m_left_prob[height]) {
       ++m_pegs[height][column];
       return;
     }
@@ -110,7 +119,7 @@ void Board::pass(size_t row, size_t column) {
 
   // handle if there is peg and row is even
   if (row % 2 == 0) {
-    if (direction == 1) {
+    if (direction >= m_left_prob[row]) {
       // if we are at the border on the right
       if (column + 1 == width) {
         Board::drop(height, column);
@@ -121,7 +130,7 @@ void Board::pass(size_t row, size_t column) {
       return;
     }
 
-    if (direction == 0) {
+    if (direction < m_left_prob[row]) {
       // if we are at the border on the left
       if (column == 0) {
         Board::drop(height, column);
@@ -134,16 +143,17 @@ void Board::pass(size_t row, size_t column) {
   }
 
   // handle if there is peg and row is not even
-  if (direction == 1) {
+  if (direction >= m_left_prob[row]) {
     pass(row + 1, column + 1);
     return;
   }
-  if (direction == 0) {
+  if (direction < m_left_prob[row]) {
     pass(row + 1, column);
     return;
   }
 }
 
+// ball initialization passes ball from the peg in the middle, at the top row
 void Board::ball() { pass(0, (width + 1) / 2 - 1); }
 
 // todo: remove last |
@@ -169,13 +179,15 @@ void Board::print_entries_graphic() {
   }
 }
 
-void Board::print_entries_numeric(){
-  for (auto entry : m_pegs[height]){
+void Board::print_entries_numeric() {
+  for (auto entry : m_pegs[height]) {
     std::cout << "--- " << std::setw(8) << entry << " ---\n";
   }
 }
 
-void Board::clear_entries(){
-  std::replace_if(m_pegs[height].begin(), m_pegs[height].end(), [](int){return true;}, 0);
+void Board::clear_entries() {
+  std::replace_if(
+      m_pegs[height].begin(), m_pegs[height].end(), [](int) { return true; },
+      0);
 }
 }  // namespace galton

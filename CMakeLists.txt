@@ -3,7 +3,6 @@ project(galton VERSION 0.1.0)
 
 # abilita il supporto per i test, tra cui l'opzione BUILD_TESTING usata sotto
 include(CTest)
-project(swarm VERSION 0.1.0)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -25,10 +24,10 @@ add_executable(galton src/main.cpp src/board.cpp src/iopegs.cpp)
 # per disabilitare il testing, passare -DBUILD_TESTING=OFF a cmake durante la fase di configurazione
 
 if (BUILD_TESTING)
-  # aggiungi l'eseguibile boid.t
+  # aggiungi l'eseguibile galton.t
   add_executable(galton.t src/board.cpp src/board_test.cpp src/iopegs.cpp)
 
-  # aggiungi l'eseguibile boid.t alla lista dei test
+  # aggiungi l'eseguibile galton.t alla lista dei test
   add_test(NAME galton.t COMMAND galton.t)
 
 endif()

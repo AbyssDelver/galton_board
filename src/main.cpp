@@ -14,13 +14,14 @@ int main() {
     galton::read_pegs(pegs, "../pegs.txt");
   }
 
-  galton::Board board(pegs);
+  galton::Board board(pegs,
+                      {0.9, 0.9, 0.9, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1});
 
   while (true) {
     std::cout << "Enter the number of balls to drop on the galton board:\n";
     int n{};
 
-    if (!(std::cin >> n)){
+    if (!(std::cin >> n)) {
       // Input was not a valid integer
       std::cin.clear();  // Clear error flags
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
