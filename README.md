@@ -2,7 +2,7 @@
 
 
 -----
-to build in release mode, as is advised for better performance:
+to build in release mode:
 
 ```
 cmake -S ./ -B build/release -DBUILD_TESTING=True -DCMAKE_BUILD_TYPE=Release
@@ -16,10 +16,15 @@ to run the program:
 ```
 ./build/release/galton
 ```
+to run the gradient descent version of the program:
+```
+./build/release/galton_descent
+```
 to run the test for the program:
 ```
 ./build/release/galton.t
 ```
+-----
 -----
 To build in debug mode use instead:
 ```
@@ -34,6 +39,10 @@ cmake --build build/debug
 to run the program:
 ```
 ./build/debug/galton
+```
+to run the gradient descent version of the program:
+```
+./build/debug/galton_descent
 ```
 to run the test for the program:
 ```
