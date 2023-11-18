@@ -3,7 +3,7 @@
 #include "board.hpp"
 
 namespace galton {
-    matrix& read_pegs(matrix& pegs, std::string file_name);
+    matrix& read_pegs(matrix& pegs, const std::string& file_name);
     void print_pegs(const matrix& pegs);
 }
 #endif

@@ -25,7 +25,7 @@ add_executable(galton src/main.cpp src/board.cpp src/iopegs.cpp)
 
 if (BUILD_TESTING)
   # aggiungi l'eseguibile galton.t
-  add_executable(galton.t src/board.cpp src/board_test.cpp src/iopegs.cpp)
+  add_executable(galton.t src/board.cpp tests/board_test.cpp src/iopegs.cpp)
 
   # aggiungi l'eseguibile galton.t alla lista dei test
   add_test(NAME galton.t COMMAND galton.t)

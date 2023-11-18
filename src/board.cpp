@@ -36,7 +36,8 @@ Board::Board(matrix pegs, const std::vector<double>& left_prob)
   if (left_prob.size() != height + 1) {
     throw std::invalid_argument(
         "vector of row probability should contain as many elements as rows in "
-        "the board, plus another one for the probability of section dividers in case of ball "
+        "the board, plus another one for the probability of section dividers "
+        "in case of ball "
         "drop on last row");
   };
 
@@ -52,7 +53,8 @@ Board::Board(matrix pegs, const std::vector<double>& left_prob)
     } else {
       if ((pegs[i].size() != width - 1)) {
         throw std::invalid_argument(
-            "rows must alternate between sizes of the width and sizes of the width - "
+            "rows must alternate between sizes of the width and sizes of the "
+            "width - "
             "1");
       };
     }
@@ -64,7 +66,7 @@ Board::Board(matrix pegs, const std::vector<double>& left_prob)
 }
 
 void Board::drop(size_t row, size_t column) {
-  // handle dropping to end of table
+  // handle droppegg to end of table
   if (row + 2 >= height) {
     if (row % 2 == 0) {
       ++m_pegs[height][column];
@@ -85,7 +87,7 @@ void Board::drop(size_t row, size_t column) {
     }
   }
 
-  // in case the ball is not dropping to the bottom:
+  // in case the ball is not droppegg to the bottom:
   pass(row + 2, column);
 }
 
@@ -189,5 +191,108 @@ void Board::clear_entries() {
   std::replace_if(
       m_pegs[height].begin(), m_pegs[height].end(), [](int) { return true; },
       0);
+}
+
+// Checking from where it could come from above through a drop():
+double Board::drop_ev(int row, int column) {
+  double ev{};
+  for (int row_i{static_cast<int>(row) - 2}; row_i > 0; row_i -= 2) {
+    // If peg above is not present, then we calculate the ev of that point.
+    if (m_pegs[row_i][column] == 1)
+      break;
+    else {
+      ev += peg_ev(row_i, column);
+    }
+  }
+  return ev;
+}
+
+// Calculates the form expected value of the ball falling on the peg. Recursive.
+// Bottom up approach. Starts from peg and asks: where did it come from? left?
+// right? did it drop from above? with which probability?
+double Board::peg_ev(size_t row, size_t column) {
+  assert(row >= 0);
+  assert(column >= 0);
+  // It allows even the calculation of expected values on bins, if row = height
+  //TODO: delete
+  assert(row <= height);
+  assert(column < width);
+
+  double ev{};
+
+  // The recursion stops here.
+  // If we are at the top of the row, we are sure the ball hit the middle peg.
+  if (row == 0) {
+    assert(column == (width + 1) / 2 - 1);
+    // TODO: should it return one?
+    return 1.;
+  }
+
+  // Checking if column to the right on the row above exists.
+  if (row % 2 == 0 && column != width - 1) {
+    // If the peg to the right is not empty calculate it's ev.
+    if (m_pegs[row - 1][column] == 1) {
+      // probability of coming from right = (probability of pegs above going
+      // left) * (probability of getting to peg above to the right)
+      ev += m_left_prob[row - 1] * peg_ev(row - 1, column);
+    }
+  } else if (row % 2 != 0) {
+    // If the peg is not empty calculate it's ev.
+    if (m_pegs[row - 1][column + 1] == 1) {
+      ev += m_left_prob[row - 1] * peg_ev(row - 1, column + 1);
+    }
+  }
+
+  // Checking if column to the left on the row above exists.
+  if (row % 2 == 0 && column != 0) {
+    // If the peg to the left is not empty calculate it's ev.
+    if (m_pegs[row - 1][column - 1] == 1) {
+      // probability of coming from left = (probability of pegs above going
+      // right) * (probability of getting to peg above to the left)
+      ev += (1 - m_left_prob[row - 1]) * peg_ev(row - 1, column - 1);
+    }
+  } else if (row % 2 != 0) {
+    // If the peg is not empty calculate it's ev.
+    if (m_pegs[row - 1][column] == 1) {
+      ev += (1 - m_left_prob[row - 1]) * peg_ev(row - 1, column);
+    }
+  }
+
+  ev += drop_ev(row, column);
+
+  // If we are calculating ev from the bins, then we also have to consider the
+  // proability of hitting a diveder of the bins.
+  if (row == height) {
+    // From the right.
+    if (column != width - 1) {
+      if (m_pegs[row - 1][column] == 0) {
+        ev += m_left_prob[height] * drop_ev(row - 1, column);
+      }
+    }
+    // Handle case of ball falling in last bin by hitting a wall.
+    else {
+      for (int row_i{static_cast<int>(height) - 2}; row_i > 0; row_i -= 2) {
+        if (m_pegs[row_i][width - 1] == 1) {
+          ev += (1-m_left_prob[row_i]) * peg_ev(row_i, width - 1);
+        }
+      }
+    }
+    // From the left.
+    if (column != 0) {
+      if (m_pegs[row - 1][column - 1] == 0) {
+        ev += (1 - m_left_prob[height]) * drop_ev(row - 1, column - 1);
+      }
+    }
+    // Handle case of ball falling in first bin by hitting a wall.
+    else {
+      for (int row_i{static_cast<int>(height) - 2}; row_i > 0; row_i -= 2) {
+        if (m_pegs[row_i][0] == 1) {
+          ev += m_left_prob[row_i] * peg_ev(row_i, 0);
+        }
+      }
+    }
+  }
+  std::cout << "\n ------ the row is: " << row << " and column " << column << " ------- the ev: "<< ev << " \n";
+  return ev;
 }
 }  // namespace galton

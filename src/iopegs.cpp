@@ -9,7 +9,7 @@
 
 namespace galton {
 
-matrix& read_pegs(matrix& pegs, std::string file_name) {
+matrix& read_pegs(matrix& pegs,const std::string& file_name) {
   std::ifstream file{file_name};
 
   if (!file) {
