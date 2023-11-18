@@ -15,7 +15,7 @@ class Board {
 
   void pass(size_t row, size_t column);
   void drop(size_t row, size_t column);
-  double drop_ev(int row, int column);
+  double drop_ev(size_t const row, size_t const column);
 
  public:
   Board(matrix, const std::vector<double>&);
@@ -27,7 +27,7 @@ class Board {
   double expected_value(size_t bin);
   // calculates the form expected value of the ball falling on the pin.
   // recursive.
-  double peg_ev(size_t row, size_t column);
+  double peg_ev(size_t const row, size_t const column);
 };
 
 }  // namespace galton

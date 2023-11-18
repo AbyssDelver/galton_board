@@ -45,23 +45,108 @@ TEST_CASE("checking if asserts work as intended in board constructor") {
 }
 
 TEST_CASE("testing peg_ev function") {
-  galton::matrix pegs;
-  galton::read_pegs(pegs, "tests/test1.txt");
-  const std::vector<double> left_prob{0.5, 0.5, 0.5, 0.5, 1.};
+  SUBCASE("case from test1.txt") {
+    galton::matrix pegs;
+    try {
+      galton::read_pegs(pegs, "tests/test1.txt");
+    } catch (std::runtime_error& err) {
+      galton::read_pegs(pegs, "../tests/test1.txt");
+    }
+    const std::vector<double> left_prob{0.5, 0.5, 0.5, 0.5, 1.};
 
-  galton::Board board{pegs, left_prob};
+    galton::Board board{pegs, left_prob};
 
-  for (int i{}; i < 1000; ++i) {
-    board.ball();
+    CHECK(board.peg_ev(4, 3) == doctest::Approx(0.125));
+    CHECK(board.peg_ev(4, 4) == doctest::Approx(0.375));
+    CHECK(board.peg_ev(4, 5) == doctest::Approx(0.375));
+    CHECK(board.peg_ev(4, 6) == doctest::Approx(0.125));
   }
 
-  galton::print_pegs(pegs);
-  board.print_entries_graphic();
-  board.print_entries_numeric();
-  board.clear_entries();
+    SUBCASE("case from test2.txt") {
+      galton::matrix pegs;
+      try {
+        galton::read_pegs(pegs, "tests/test2.txt");
+      } catch (std::runtime_error& err) {
+        galton::read_pegs(pegs, "../tests/test2.txt");
+      }
+      const std::vector<double> left_prob{0.2, 0.8, 0.1, 0.9, 1.,
+                                          0.7, 0.3, 0.8, 0.3, 0.6, 0.};
 
-  CHECK(board.peg_ev(4, 4) == doctest::Approx(0.125));
-  CHECK(board.peg_ev(4, 5) == doctest::Approx(0.375));
-  CHECK(board.peg_ev(4, 6) == doctest::Approx(0.375));
-  CHECK(board.peg_ev(4, 7) == doctest::Approx(0.125));
+      galton::Board board{pegs, left_prob};
+
+      double ev_sum{};
+      for (int i{}; i < 11; ++i) {
+        ev_sum += board.peg_ev(10, i);
+        std::cout << "--- " << std::setw(8) << board.peg_ev(10, i) << " ---\n";
+      }
+      std::cout << '\n';
+
+      for (int i{}; i < 10000; ++i) {
+        board.ball();
+      }
+
+      board.print_entries_numeric();
+      std::cout << '\n';
+
+
+      CHECK(ev_sum == doctest::Approx(1.));
+    }
+
+  SUBCASE("case from test3.txt") {
+    galton::matrix pegs;
+    try {
+      galton::read_pegs(pegs, "tests/test3.txt");
+    } catch (std::runtime_error& err) {
+      galton::read_pegs(pegs, "../tests/test3.txt");
+    }
+    const std::vector<double> left_prob{0.2, 0.8, 0.1, 0.9, 1.};
+
+    galton::Board board{pegs, left_prob};
+
+    double ev_sum{};
+    for (int i{}; i < 11; ++i) {
+      ev_sum += board.peg_ev(4, i);
+      std::cout << "--- " << std::setw(8) << board.peg_ev(4, i) << " ---\n";
+    }
+    std::cout << '\n';
+
+    for (int i{}; i < 10000; ++i) {
+      board.ball();
+    }
+
+    board.print_entries_numeric();
+
+    CHECK(ev_sum == doctest::Approx(1.));
+  }
+
+  SUBCASE("case from test4.txt") {
+    galton::matrix pegs;
+    try {
+      galton::read_pegs(pegs, "tests/test4.txt");
+    } catch (std::runtime_error& err) {
+      galton::read_pegs(pegs, "../tests/test4.txt");
+    }
+    const std::vector<double> left_prob{0.2, 0.8,  0.1,  0.9, 0.2,
+                                        0.7, 0.42, 0.76, 0.2, 0.8,
+                                        0.1, 0.9,  0.2};
+
+    galton::Board board{pegs, left_prob};
+
+    double ev_sum{};
+    for (int i{}; i < 15; ++i) {
+      ev_sum += board.peg_ev(12, i);
+      std::cout << "--- " << std::setw(8) << board.peg_ev(12, i) << " ---\n";
+    }
+    std::cout << '\n';
+
+    for (int i{}; i < 10000; ++i) {
+      board.ball();
+    }
+
+    board.print_entries_numeric();
+    std::cout << '\n';
+
+
+    CHECK(ev_sum == doctest::Approx(1.));
+  }
 }

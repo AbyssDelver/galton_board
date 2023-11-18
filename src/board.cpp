@@ -193,28 +193,15 @@ void Board::clear_entries() {
       0);
 }
 
-// Checking from where it could come from above through a drop():
-double Board::drop_ev(int row, int column) {
-  double ev{};
-  for (int row_i{static_cast<int>(row) - 2}; row_i > 0; row_i -= 2) {
-    // If peg above is not present, then we calculate the ev of that point.
-    if (m_pegs[row_i][column] == 1)
-      break;
-    else {
-      ev += peg_ev(row_i, column);
-    }
-  }
-  return ev;
-}
 
 // Calculates the form expected value of the ball falling on the peg. Recursive.
 // Bottom up approach. Starts from peg and asks: where did it come from? left?
 // right? did it drop from above? with which probability?
-double Board::peg_ev(size_t row, size_t column) {
+double Board::peg_ev(size_t const row, size_t const column) {
   assert(row >= 0);
   assert(column >= 0);
   // It allows even the calculation of expected values on bins, if row = height
-  //TODO: delete
+  // TODO: delete
   assert(row <= height);
   assert(column < width);
 
@@ -224,7 +211,6 @@ double Board::peg_ev(size_t row, size_t column) {
   // If we are at the top of the row, we are sure the ball hit the middle peg.
   if (row == 0) {
     assert(column == (width + 1) / 2 - 1);
-    // TODO: should it return one?
     return 1.;
   }
 
@@ -258,7 +244,12 @@ double Board::peg_ev(size_t row, size_t column) {
     }
   }
 
-  ev += drop_ev(row, column);
+  if (row > 2) {
+    // If peg above is not present, then we calculate the ev of that point.
+    if (m_pegs[row-2][column] == 0){
+      ev += peg_ev(row-2, column);
+    }
+  }
 
   // If we are calculating ev from the bins, then we also have to consider the
   // proability of hitting a diveder of the bins.
@@ -266,21 +257,21 @@ double Board::peg_ev(size_t row, size_t column) {
     // From the right.
     if (column != width - 1) {
       if (m_pegs[row - 1][column] == 0) {
-        ev += m_left_prob[height] * drop_ev(row - 1, column);
+        ev += m_left_prob[height] * peg_ev(row - 1, column);
       }
     }
     // Handle case of ball falling in last bin by hitting a wall.
     else {
       for (int row_i{static_cast<int>(height) - 2}; row_i > 0; row_i -= 2) {
         if (m_pegs[row_i][width - 1] == 1) {
-          ev += (1-m_left_prob[row_i]) * peg_ev(row_i, width - 1);
+          ev += (1 - m_left_prob[row_i]) * peg_ev(row_i, width - 1);
         }
       }
     }
     // From the left.
     if (column != 0) {
       if (m_pegs[row - 1][column - 1] == 0) {
-        ev += (1 - m_left_prob[height]) * drop_ev(row - 1, column - 1);
+        ev += (1 - m_left_prob[height]) * peg_ev(row - 1, column - 1);
       }
     }
     // Handle case of ball falling in first bin by hitting a wall.
@@ -292,7 +283,7 @@ double Board::peg_ev(size_t row, size_t column) {
       }
     }
   }
-  std::cout << "\n ------ the row is: " << row << " and column " << column << " ------- the ev: "<< ev << " \n";
+  assert(ev <= 1);
   return ev;
 }
 }  // namespace galton
