@@ -5,17 +5,18 @@
 
 #include "board.hpp"
 #include "iopegs.hpp"
+#include "constants.hpp"
 
 int main() {
   galton::matrix pegs;
   try {
-    galton::read_pegs(pegs, "pegs.txt");
+    galton::read_pegs(pegs, consts::file_name);
   } catch (std::runtime_error& err) {
-    galton::read_pegs(pegs, "../pegs.txt");
+    galton::read_pegs(pegs, "../" + consts::file_name);
   }
 
   galton::Board board(pegs,
-                      {0.9, 0.9, 0.9, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1});
+                      consts::init_prob_left);
 
   while (true) {
     std::cout << "Enter the number of balls to drop on the galton board:\n";

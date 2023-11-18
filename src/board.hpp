@@ -19,15 +19,22 @@ class Board {
 
  public:
   Board(matrix, const std::vector<double>&);
+
+  //Getter functions
+  size_t get_width() const;
+  size_t get_height() const;
+
+  void change_left_prob(size_t entry, double new_element);
+  double get_left_prob(size_t entry) const;
+
   void ball();
-  void print_entries_graphic();
-  void print_entries_numeric();
+  void print_entries_graphic() const;
+  void print_entries_numeric() const;
   void clear_entries();
-  // returns expected value of bin, 0 being the first, width-1 being the last
-  double expected_value(size_t bin);
+
   // calculates the form expected value of the ball falling on the pin.
   // recursive.
-  double peg_ev(size_t const row, size_t const column);
+  double peg_ev(size_t const row, size_t const column) const;
 };
 
 }  // namespace galton

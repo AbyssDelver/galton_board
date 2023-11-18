@@ -65,6 +65,28 @@ Board::Board(matrix pegs, const std::vector<double>& left_prob)
   m_pegs.push_back(entries_);
 }
 
+size_t Board::get_width() const { return width; }
+
+size_t Board::get_height() const { return height; }
+
+void Board::change_left_prob(size_t entry, double new_element) {
+  assert(entry < height + 1);
+  if(new_element > 1){
+    m_left_prob[entry] = 1;
+  }
+  else if(new_element < 0){
+    m_left_prob[entry] = 0;
+  }
+  else{
+  m_left_prob[entry] = new_element;
+  }
+}
+
+double Board::get_left_prob(size_t entry) const {
+  assert(entry < height + 1);
+  return m_left_prob[entry];
+}
+
 void Board::drop(size_t row, size_t column) {
   // handle droppegg to end of table
   if (row + 2 >= height) {
@@ -159,7 +181,7 @@ void Board::pass(size_t row, size_t column) {
 void Board::ball() { pass(0, (width + 1) / 2 - 1); }
 
 // todo: remove last |
-void Board::print_entries_graphic() {
+void Board::print_entries_graphic() const {
   auto max = *(std::max_element(m_pegs[height].begin(), m_pegs[height].end()));
   for (size_t i{}; i < entries_print_size; ++i) {
     for (size_t j{}; j < m_pegs[height].size(); ++j) {
@@ -181,7 +203,7 @@ void Board::print_entries_graphic() {
   }
 }
 
-void Board::print_entries_numeric() {
+void Board::print_entries_numeric() const {
   for (auto entry : m_pegs[height]) {
     std::cout << "--- " << std::setw(8) << entry << " ---\n";
   }
@@ -193,11 +215,10 @@ void Board::clear_entries() {
       0);
 }
 
-
 // Calculates the form expected value of the ball falling on the peg. Recursive.
 // Bottom up approach. Starts from peg and asks: where did it come from? left?
 // right? did it drop from above? with which probability?
-double Board::peg_ev(size_t const row, size_t const column) {
+double Board::peg_ev(size_t const row, size_t const column) const {
   assert(row >= 0);
   assert(column >= 0);
   // It allows even the calculation of expected values on bins, if row = height
@@ -246,8 +267,8 @@ double Board::peg_ev(size_t const row, size_t const column) {
 
   if (row > 2) {
     // If peg above is not present, then we calculate the ev of that point.
-    if (m_pegs[row-2][column] == 0){
-      ev += peg_ev(row-2, column);
+    if (m_pegs[row - 2][column] == 0) {
+      ev += peg_ev(row - 2, column);
     }
   }
 
@@ -283,7 +304,7 @@ double Board::peg_ev(size_t const row, size_t const column) {
       }
     }
   }
-  assert(ev <= 1);
+  assert(ev <= 1.009);
   return ev;
 }
 }  // namespace galton

@@ -19,6 +19,7 @@ string(APPEND CMAKE_CXX_FLAGS_DEBUG " -fsanitize=address,undefined -fno-omit-fra
 string(APPEND CMAKE_EXE_LINKER_FLAGS_DEBUG " -fsanitize=address,undefined -fno-omit-frame-pointer")
 
 add_executable(galton src/main.cpp src/board.cpp src/iopegs.cpp)
+add_executable(galton_descent src/grad_descent.cpp src/board.cpp src/iopegs.cpp)
 
 # se il testing e' abilitato...
 # per disabilitare il testing, passare -DBUILD_TESTING=OFF a cmake durante la fase di configurazione
