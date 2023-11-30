@@ -11,10 +11,10 @@
 
 constexpr int entries_print_size{8};
 
-std::random_device rd;   // a seed source for the random number engine
-std::mt19937 gen(rd());  // mersenne_twister_engine seeded with rd()
+static std::random_device rd;   // a seed source for the random number engine
+static std::mt19937 gen(rd());  // mersenne_twister_engine seeded with rd()
 // todo: check is actually double
-std::uniform_real_distribution<> distrib(0., 1.);
+static std::uniform_real_distribution<> distrib(0., 1.);
 
 namespace galton {
 // todo: add assert that all the vectors be comprised of ones and zeros
